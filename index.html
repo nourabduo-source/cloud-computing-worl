@@ -1070,18 +1070,71 @@ button.cloud-node:hover {
   </div>
 </section>
 
+
 <section id="architecture">
   <div class="container">
     <div class="section-heading">
       <small>كيف تعمل السحابة؟</small>
       <h2>مكونات البنية السحابية</h2>
-      <p>تعرّف على العناصر الأساسية التي تعمل معًا لتقديم الخدمات الرقمية.</p>
+      <p>اكتشف كيف تتعاون المكونات لتقديم الخدمات الرقمية.</p>
     </div>
-    <div class="architecture">
-      <div class="arch-item"><span>🌐</span><b>الشبكات</b><small>ربط المستخدمين بالخدمات</small></div>
-      <div class="arch-item"><span>🖥️</span><b>الخوادم</b><small>معالجة البيانات وتشغيل التطبيقات</small></div>
-      <div class="arch-item"><span>🗄️</span><b>قواعد البيانات</b><small>تنظيم وحفظ المعلومات</small></div>
-      <div class="arch-item"><span>💾</span><b>التخزين</b><small>حفظ الملفات والنسخ الاحتياطية</small></div>
+
+    <div class="cloud-flow">
+
+      <div class="cloud-node user-node">
+        <span>📱</span>
+        <b>المستخدم</b>
+        <small>هاتف أو حاسوب</small>
+      </div>
+
+      <div class="flow-arrow">↓</div>
+
+      <div class="cloud-node network-node">
+        <span>🌐</span>
+        <b>الشبكات</b>
+        <small>نقل البيانات والاتصال</small>
+      </div>
+
+      <div class="flow-arrow">↓</div>
+
+      <div class="cloud-components">
+
+        <button class="cloud-node" type="button"
+          data-title="الخوادم"
+          data-description="الخوادم أجهزة حاسوبية قوية تستقبل الطلبات وتعالج البيانات وتشغّل المواقع والتطبيقات.">
+          <span>🖥️</span>
+          <b>الخوادم</b>
+          <small>معالجة وتشغيل التطبيقات</small>
+          <em>اضغط للتفاصيل</em>
+        </button>
+
+        <button class="cloud-node" type="button"
+          data-title="قواعد البيانات"
+          data-description="تُستخدم قواعد البيانات لتنظيم المعلومات وتخزينها واسترجاعها عند الحاجة، مثل بيانات المستخدمين والطلبات.">
+          <span>🗄️</span>
+          <b>قواعد البيانات</b>
+          <small>تنظيم وحفظ المعلومات</small>
+          <em>اضغط للتفاصيل</em>
+        </button>
+
+      </div>
+
+      <div class="flow-arrow">↓</div>
+
+      <button class="cloud-node storage-node" type="button"
+        data-title="التخزين السحابي"
+        data-description="يتيح التخزين السحابي حفظ الملفات والنسخ الاحتياطية عبر الإنترنت والوصول إليها من أجهزة وأماكن مختلفة.">
+        <span>💾</span>
+        <b>التخزين السحابي</b>
+        <small>حفظ الملفات والنسخ الاحتياطية</small>
+        <em>اضغط للتفاصيل</em>
+      </button>
+
+      <div id="cloudInfo" class="cloud-info" aria-live="polite">
+        <b>اكتشف مكونات السحابة</b>
+        <p>اضغط على الخوادم أو قواعد البيانات أو التخزين لمعرفة المزيد عن دور كل مكوّن.</p>
+      </div>
+
     </div>
   </div>
 </section>
