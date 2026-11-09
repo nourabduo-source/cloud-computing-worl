@@ -859,6 +859,121 @@ footer p {
   }
 }
 
+/* Cloud Architecture Interactive Diagram */
+.cloud-flow {
+  max-width: 850px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cloud-node {
+  width: 100%;
+  max-width: 330px;
+  min-height: 125px;
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: var(--text);
+  background: linear-gradient(145deg, #142d49, #0b1a30);
+  border: 1px solid rgba(80, 180, 255, .3);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+  text-align: center;
+  font: inherit;
+  transition: .3s ease;
+}
+
+button.cloud-node {
+  cursor: pointer;
+}
+
+button.cloud-node:hover {
+  transform: translateY(-5px);
+  border-color: var(--cyan);
+  box-shadow: 0 12px 30px rgba(54, 169, 255, .2);
+}
+
+.cloud-node > span {
+  font-size: 34px;
+}
+
+.cloud-node b {
+  font-size: 18px;
+}
+
+.cloud-node small,
+.cloud-node em {
+  color: var(--muted);
+  font-size: 13px;
+  font-style: normal;
+}
+
+.cloud-node em {
+  color: var(--cyan);
+  font-size: 11px;
+}
+
+.network-node {
+  background: linear-gradient(145deg, #123c5d, #102640);
+}
+
+.storage-node {
+  background: linear-gradient(145deg, #123d49, #102b39);
+}
+
+.flow-arrow {
+  color: var(--cyan);
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.cloud-components {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  justify-items: center;
+}
+
+.cloud-info {
+  width: 100%;
+  max-width: 700px;
+  padding: 22px;
+  margin-top: 10px;
+  background: rgba(20, 41, 68, .7);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.cloud-info b {
+  color: var(--cyan);
+  font-size: 18px;
+}
+
+.cloud-info p {
+  color: var(--muted);
+  line-height: 1.9;
+  margin: 8px 0 0;
+}
+
+@media (max-width: 600px) {
+  .cloud-components {
+    grid-template-columns: 1fr;
+  }
+
+  .cloud-node {
+    max-width: 100%;
+  }
+  }
+  
 </style>
 </head>
 
@@ -1089,6 +1204,32 @@ chatForm.addEventListener('submit', function(event) {
     addMessage(getCloudAnswer(question), 'bot');
   }, 400);
 });
+  
+/* تفاعل مكونات البنية السحابية */
+document.querySelectorAll('.cloud-node[data-title]').forEach(function(node) {
+  node.addEventListener('click', function() {
+    const title = node.dataset.title;
+    const description = node.dataset.description;
+    const info = document.getElementById('cloudInfo');
+
+    info.innerHTML = '';
+
+    const heading = document.createElement('b');
+    heading.textContent = title;
+
+    const paragraph = document.createElement('p');
+    paragraph.textContent = description;
+
+    info.appendChild(heading);
+    info.appendChild(paragraph);
+
+    info.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest'
+    });
+  });
+});
+  
 </script>
 </body>
 </html>
