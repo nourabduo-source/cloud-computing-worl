@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="اكتشف عالم الحوسبة السحابية والذكاء الاصطناعي والخدمات الرقمية مع Cloud Computing World.">
+<title>Cloud Computing World | عالم الحوسبة السحابية</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#07111f;
+  --panel:#101e32;
+  --panel2:#142640;
+  --blue:#36a9ff;
+  --cyan:#37e0d0;
+  --text:#f5f8ff;
+  --muted:#a6b5ca;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Cairo',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.8;
+}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+.container{width:min(1120px,90%);margin:auto}
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(7,17,31,.92);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #ffffff12;
+}
+nav{
+  min-height:76px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.logo{font-size:21px;font-weight:900}
+.logo span{color:var(--cyan)}
+.nav-links{display:flex;gap:23px;align-items:center}
+.nav-links a{font-size:13px;color:var(--muted)}
+.nav-links a:hover{color:var(--cyan)}
+.menu-btn{
+  display:none;background:none;color:white;
+  border:1px solid #ffffff30;padding:7px 12px;border-radius:8px;
+}
+.hero{
+  min-height:610px;display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:
+  radial-gradient(ellipse at 15% 35%,#0879bd35,transparent 42%),
+  radial-gradient(ellipse at 85% 80%,#12b9ad20,transparent 40%);
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;
+  gap:45px;align-items:center;padding:85px 0;
+}
+.eyebrow{
+  display:inline-block;padding:7px 15px;border-radius:30px;
+  border:1px solid #37e0d055;color:var(--cyan);
+  background:#37e0d010;font-size:12px;margin-bottom:20px;
+}
+h1{font-size:clamp(35px,5vw,60px);line-height:1.35;font-weight:900}
+h1 span{background:linear-gradient(90deg,var(--cyan),var(--blue));
+-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);font-size:16px;margin:22px 0 28px;max-width:570px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;justify-content:center;align-items:center;
+  padding:12px 23px;border-radius:10px;font-weight:700;font-size:14px;
+  transition:.2s;
+}
+.btn-primary{background:linear-gradient(100deg,#168fe8,#23c9c0);color:#041321}
+.btn-outline{border:1px solid #ffffff35;color:white}
+.btn:hover{transform:translateY(-3px)}
+.cloud-visual{
+  min-height:340px;display:grid;place-items:center;position:relative;
+}
+.cloud-circle{
+  width:255px;height:255px;border-radius:50%;
+  border:1px solid #36a9ff66;
+  background:radial-gradient(circle,#168fe83d,transparent 68%);
+  display:grid;place-items:center;
+  box-shadow:0 0 90px #168fe82b,inset 0 0 50px #168fe820;
+  font-size:105px;
+}
+.float-card{
+  position:absolute;background:#142640eF;
+  border:1px solid #ffffff20;border-radius:13px;
+  padding:12px 17px;font-size:12px;color:#dceaff;
+  box-shadow:0 12px 35px #0005;
+}
+.float-card b{display:block;color:var(--cyan);font-size:14px}
+.card-one{top:35px;right:0}
+.card-two{bottom:35px;left:0}
+.card-three{top:45%;left:-15px}
+section{padding:85px 0}
+.section-heading{text-align:center;margin-bottom:42px}
+.section-heading small{color:var(--cyan);font-weight:700}
+.section-heading h2{font-size:32px;margin:8px 0}
+.section-heading p{color:var(--muted);font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:linear-gradient(145deg,var(--panel),#0c192a);
+  border:1px solid #ffffff12;border-radius:17px;padding:26px;
+  transition:.25s;
+}
+.card:hover{transform:translateY(-6px);border-color:#36a9ff66}
+.card-icon{font-size:34px;margin-bottom:14px}
+.card h3{font-size:18px;margin-bottom:9px}
+.card p{font-size:13px;color:var(--muted)}
+#comparison{background:#0a1728}
+.comparison-wrap{
+  overflow-x:auto;border:1px solid #ffffff15;border-radius:15px;
+}
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:17px;text-align:center;border-bottom:1px solid #ffffff12;font-size:14px}
+th{background:#142640;color:var(--cyan)}
+td:first-child{color:#d4e1f2;font-weight:700}
+tr:last-child td{border-bottom:0}
+.architecture{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:13px;margin-top:30px;
+}
+.arch-item{
+  background:var(--panel);border:1px solid #ffffff15;
+  border-radius:13px;padding:22px 10px;text-align:center;
+}
+.arch-item span{font-size:34px;display:block}
+.arch-item b{display:block;margin:8px 0;font-size:14px}
+.arch-item small{color:var(--muted);font-size:11px}
+.podcast-box{
+  display:grid;grid-template-columns:.8fr 1.2fr;gap:35px;
+  align-items:center;background:linear-gradient(120deg,#102b48,#102039);
+  border:1px solid #ffffff15;border-radius:22px;padding:35px;
+}
+.podcast-art{
+  min-height:220px;border-radius:17px;
+  background:radial-gradient(circle,#1c9acb,#10305b 65%,#0a1728);
+  display:grid;place-items:center;font-size:85px;
+}
+.podcast-box p{color:var(--muted);font-size:14px;margin:12px 0}
+audio{width:100%;margin-top:15px}
+.chat-section{background:linear-gradient(140deg,#0c1c31,#091524)}
+.chat-box{
+  max-width:720px;margin:auto;background:var(--panel);
+  border:1px solid #ffffff20;border-radius:18px;overflow:hidden;
+}
+.chat-head{padding:18px 22px;background:#142640;display:flex;gap:12px;align-items:center}
+.online{width:10px;height:10px;border-radius:50%;background:#38e5a2}
+.chat-messages{height:250px;overflow-y:auto;padding:20px}
+.message{
+  max-width:85%;padding:11px 15px;border-radius:12px;
+  margin-bottom:12px;font-size:13px;
+}
+.bot{background:#1a304b;color:#e7f1ff;margin-left:auto}
+.user{background:#126b91;color:white;margin-right:auto}
+.chat-input{display:flex;gap:8px;padding:14px;border-top:1px solid #ffffff15}
+.chat-input input{
+  flex:1;min-width:0;background:#091524;border:1px solid #ffffff20;
+  border-radius:9px;padding:12px;color:white;font-family:inherit;
+}
+.chat-input button{
+  border:0;border-radius:9px;padding:0 20px;
+  background:var(--cyan);font-weight:800;color:#061421;
+}
+footer{padding:35px 0;border-top:1px solid #ffffff15;text-align:center}
+footer p{font-size:12px;color:var(--muted)}
+footer strong{color:var(--cyan)}
+@media(max-width:800px){
+  .nav-links{
+    display:none;position:absolute;top:76px;right:0;left:0;
+    background:#0b192b;padding:20px;flex-direction:column;
+    border-bottom:1px solid #ffffff20;
+  }
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+  .hero-grid{grid-template-columns:1fr;text-align:center;padding:65px 0}
+  .hero p{margin-right:auto;margin-left:auto}
+  .actions{justify-content:center}
+  .cloud-visual{min-height:300px}
+  .cards{grid-template-columns:1fr}
+  .podcast-box{grid-template-columns:1fr}
+  .architecture{grid-template-columns:repeat(2,1fr)}
+  section{padding:65px 0}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#home">CLOUD <span>WORLD</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">الرئيسية</a>
+        <a href="#services">الخدمات</a>
+        <a href="#comparison">المقارنة</a>
+        <a href="#architecture">البنية السحابية</a>
+        <a href="#podcast">البودكاست</a>
+        <a href="#assistant">المساعد الذكي</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">اكتشف مستقبل التكنولوجيا</span>
+      <h1>عالمك نحو <span>الحوسبة السحابية</span></h1>
+      <p>
+        اكتشف كيف تغير الحوسبة السحابية طريقة عمل العالم.
+        تعرّف على المنصات والخدمات والتقنيات التي تصنع مستقبل الأعمال الرقمية.
+      </p>
+      <div class="actions">
+        <a href="#services" class="btn btn-primary">اكتشف العالم السحابي</a>
+        <a href="#assistant" class="btn btn-outline">اسأل المساعد الذكي</a>
+      </div>
+    </div>
+    <div class="cloud-visual">
+      <div class="cloud-circle">☁️</div>
+      <div class="float-card card-one"><b>Cloud Computing</b>تقنيات المستقبل</div>
+      <div class="float-card card-two"><b>AI Technology</b>ذكاء يتطور</div>
+      <div class="float-card card-three"><b>99.9%</b>التوافر المستهدف للخدمات</div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-heading">
+      <small>عالم بلا حدود</small>
+      <h2>ما هي الحوسبة السحابية؟</h2>
+      <p>تقنيات تمنحك القدرة على استخدام الموارد الرقمية عبر الإنترنت.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">☁️</div>
+        <h3>التخزين السحابي</h3>
+        <p>احفظ ملفاتك وبياناتك عبر الإنترنت، وتمكن من الوصول إليها من أي مكان.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🖥️</div>
+        <h3>الخوادم الافتراضية</h3>
+        <p>شغّل التطبيقات والمواقع باستخدام موارد حاسوبية مرنة وقابلة للتوسع.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🤖</div>
+        <h3>الذكاء الاصطناعي</h3>
+        <p>استفد من أدوات الذكاء الاصطناعي لتحليل البيانات وبناء حلول مبتكرة.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="comparison">
+  <div class="container">
+    <div class="section-heading">
+      <small>اختر منصتك</small>
+      <h2>مقارنة أشهر مزودي الخدمات السحابية</h2>
+      <p>نظرة تعريفية على ثلاثة من أكبر الأسماء في عالم السحابة.</p>
+    </div>
+    <div class="comparison-wrap">
+      <table>
+        <thead>
+          <tr><th>المعيار</th><th>Amazon AWS</th><th>Microsoft Azure</th><th>Google Cloud</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>الخدمات</td><td>واسعة ومتنوعة</td><td>سحابية ومؤسسية</td><td>بيانات وذكاء اصطناعي</td></tr>
+          <tr><td>الذكاء الاصطناعي</td><td>خدمات AI</td><td>Azure AI</td><td>Vertex AI</td></tr>
+          <tr><td>التخزين</td><td>Amazon S3</td><td>Blob Storage</td><td>Cloud Storage</td></tr>
+          <tr><td>قواعد البيانات</td><td>Amazon RDS</td><td>Azure SQL</td><td>Cloud SQL</td></tr>
+          <tr><td>الاستخدام</td><td>شركات ومطورون</td><td>مؤسسات وأعمال</td><td>تطبيقات وبيانات</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="container">
+    <div class="section-heading">
+      <small>كيف تعمل السحابة؟</small>
+      <h2>مكونات البنية السحابية</h2>
+      <p>تعرّف على العناصر الأساسية التي تعمل معًا لتقديم الخدمات الرقمية.</p>
+    </div>
+    <div class="architecture">
+      <div class="arch-item"><span>🌐</span><b>الشبكات</b><small>ربط المستخدمين بالخدمات</small></div>
+      <div class="arch-item"><span>🖥️</span><b>الخوادم</b><small>معالجة البيانات وتشغيل التطبيقات</small></div>
+      <div class="arch-item"><span>🗄️</span><b>قواعد البيانات</b><small>تنظيم وحفظ المعلومات</small></div>
+      <div class="arch-item"><span>💾</span><b>التخزين</b><small>حفظ الملفات والنسخ الاحتياطية</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="podcast">
+  <div class="container">
+    <div class="section-heading">
+      <small>استمع وتعلم</small>
+      <h2>بودكاست العالم السحابي</h2>
+      <p>محتوى مبسط يساعدك على فهم تقنيات المستقبل.</p>
+    </div>
+    <div class="podcast-box">
+      <div class="podcast-art">🎙️</div>
+      <div>
+        <span class="eyebrow">الحلقة التعريفية</span>
+        <h3>رحلتك الأولى إلى عالم الحوسبة السحابية</h3>
+        <p>ما المقصود بالسحابة؟ ولماذا تعتمد عليها الشركات؟ اكتشف الإجابة في هذه المقدمة.</p>
+        <audio controls>
+          <source src="" type="audio/mpeg">
+          متصفحك لا يدعم تشغيل الصوت.
+        </audio>
+        <small style="color:#a6b5ca;font-size:11px">سيتم إضافة التسجيل الصوتي للحلقة لاحقًا.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chat-section" id="assistant">
+  <div class="container">
+    <div class="section-heading">
+      <small>تجربة تفاعلية</small>
+      <h2>المساعد السحابي</h2>
+      <p>اسأل المساعد عن أساسيات الحوسبة السحابية وجرب المحادثة.</p>
+    </div>
+    <div class="chat-box">
+      <div class="chat-head">
+        <span class="online"></span>
+        <div><b>Cloud Assistant</b><div style="font-size:11px;color:#a6b5ca">مساعد تجريبي للموقع</div></div>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="message bot">مرحبًا بك! أنا مساعدك السحابي التجريبي. اسألني: ما هي الحوسبة السحابية؟</div>
+      </div>
+      <form class="chat-input" id="chatForm">
+        <input id="chatInput" type="text" placeholder="اكتب سؤالك هنا..." autocomplete="off" required>
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="logo">CLOUD <span>WORLD</span></div>
+    <p>نحو مستقبل رقمي أكثر ذكاءً وابتكارًا.</p>
+    <p style="margin-top:12px">© 2026 Cloud Computing World - جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
+const chatMessages = document.getElementById('chatMessages');
+
+function addMessage(text, type) {
+  const div = document.createElement('div');
+  div.className = 'message ' + type;
+  div.textContent = text;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function getCloudAnswer(question) {
+  const q = question.toLowerCase();
+
+  if (q.includes('ما هي') || q.includes('الحوسبة السحابية') || q.includes('cloud computing')) {
+    return 'الحوسبة السحابية هي تقديم موارد مثل الخوادم والتخزين وقواعد البيانات عبر الإنترنت، بدلًا من امتلاك كل هذه الموارد محليًا.';
+  }
+  if (q.includes('aws') || q.includes('أمازون')) {
+    return 'Amazon AWS منصة سحابية تقدم خدمات كثيرة، منها الخوادم الافتراضية والتخزين وقواعد البيانات والذكاء الاصطناعي.';
+  }
+  if (q.includes('azure') || q.includes('مايكروسوفت')) {
+    return 'Microsoft Azure منصة سحابية من مايكروسوفت، وتوفر خدمات للحوسبة والتخزين والبيانات والذكاء الاصطناعي.';
+  }
+  if (q.includes('google') || q.includes('جوجل')) {
+    return 'Google Cloud منصة سحابية تقدم خدمات الحوسبة والتخزين وتحليل البيانات والذكاء الاصطناعي.';
+  }
+  if (q.includes('التخزين')) {
+    return 'التخزين السحابي يسمح بحفظ الملفات والبيانات على خوادم متصلة بالإنترنت والوصول إليها عند الحاجة.';
+  }
+  if (q.includes('الذكاء الاصطناعي') || q.includes('ai')) {
+    return 'الذكاء الاصطناعي يساعد الأنظمة على تحليل البيانات والتنبؤ والإجابة عن الأسئلة وإنجاز مهام متنوعة.';
+  }
+  if (q.includes('السعر') || q.includes('التكلفة')) {
+    return 'تختلف تكلفة الخدمات السحابية حسب الموارد والاستخدام ومزود الخدمة. راجع حاسبات الأسعار الرسمية قبل الاشتراك.';
+  }
+  return 'سؤال رائع! هذه نسخة تجريبية بإجابات تعريفية محدودة. يمكن تطوير المساعد وربطه لاحقًا بواجهة ذكاء اصطناعي حقيقية للإجابة عن أسئلة الزوار.';
+}
+
+chatForm.addEventListener('submit', function(event) {
+  event.preventDefault();
+  const question = chatInput.value.trim();
+  if (!question) return;
+
+  addMessage(question, 'user');
+  chatInput.value = '';
+
+  setTimeout(() => {
+    addMessage(getCloudAnswer(question), 'bot');
+  }, 400);
+});
+</script>
+</body>
+</html>
