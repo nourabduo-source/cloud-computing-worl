@@ -1162,6 +1162,23 @@ button.cloud-node:hover {
     padding: 0 17px;
   }
 }
+ /* تحسين مساحة محادثة Cloud Assistant */
+
+.chat-messages {
+  height: 420px;
+  min-height: 320px;
+  max-height: 65vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 600px) {
+  .chat-messages {
+    height: 55vh;
+    min-height: 320px;
+    max-height: 65vh;
+  }
+} 
 </style>
 </head>
 
