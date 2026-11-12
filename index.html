@@ -1068,6 +1068,81 @@ button.cloud-node:hover {
   }
 }
 
+/* تنسيق محتوى إجابات Cloud Assistant */
+
+.message.bot {
+  max-width: 92%;
+  padding: 18px 20px;
+  line-height: 2;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.message.bot p {
+  margin: 0 0 12px;
+  color: #e7f1ff;
+}
+
+.message.bot h1,
+.message.bot h2,
+.message.bot h3 {
+  color: #39e5d0;
+  font-weight: 900;
+  line-height: 1.7;
+  margin: 16px 0 9px;
+}
+
+.message.bot h1 { font-size: 21px; }
+.message.bot h2 { font-size: 18px; }
+.message.bot h3 { font-size: 16px; }
+
+.message.bot strong {
+  color: #5bc5ff;
+  font-weight: 900;
+}
+
+.message.bot em {
+  color: #39e5d0;
+}
+
+.message.bot ul,
+.message.bot ol {
+  padding-right: 25px;
+  margin: 8px 0 15px;
+}
+
+.message.bot li {
+  margin-bottom: 7px;
+  color: #e7f1ff;
+}
+
+.message.bot code {
+  background: #071525;
+  color: #39e5d0;
+  padding: 3px 7px;
+  border-radius: 6px;
+  direction: ltr;
+  display: inline-block;
+}
+
+.message.bot hr {
+  border: 0;
+  border-top: 1px solid #ffffff25;
+  margin: 15px 0;
+}
+
+@media (max-width: 600px) {
+  .message.bot {
+    max-width: 96%;
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .message.bot h1 { font-size: 19px; }
+  .message.bot h2 { font-size: 17px; }
+  .message.bot h3 { font-size: 15px; }
+  }
+  
 @media (max-width: 600px) {
   .chat-section {
     padding-top: 55px;
