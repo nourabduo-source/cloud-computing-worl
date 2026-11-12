@@ -1179,6 +1179,110 @@ button.cloud-node:hover {
     max-height: 65vh;
   }
 } 
+ /* بطاقات مقارنة المنصات السحابية */
+.cloud-providers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.provider-card {
+  position: relative;
+  overflow: hidden;
+  padding: 25px 22px;
+  border: 1px solid rgba(145,190,230,.18);
+  border-radius: 20px;
+  background: linear-gradient(145deg, #122943, #0a1729);
+  box-shadow: 0 18px 40px rgba(0,0,0,.22);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.provider-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #36a9ff, #39e5d0);
+}
+
+.provider-card.aws::before {
+  background: linear-gradient(90deg, #ff9900, #ffd166);
+}
+
+.provider-card.azure::before {
+  background: linear-gradient(90deg, #36a9ff, #75c8ff);
+}
+
+.provider-card.google::before {
+  background: linear-gradient(90deg, #39e5d0, #36a9ff);
+}
+
+.provider-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(55,224,208,.5);
+  box-shadow: 0 22px 48px rgba(0,0,0,.3);
+}
+
+.provider-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 14px;
+  border-radius: 15px;
+  background: rgba(54,169,255,.12);
+  font-size: 28px;
+}
+
+.provider-card h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.provider-desc {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 20px;
+  min-height: 42px;
+}
+
+.provider-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 11px 0;
+  border-top: 1px solid rgba(255,255,255,.09);
+}
+
+.provider-feature b {
+  color: var(--cyan);
+  font-size: 12px;
+}
+
+.provider-feature span {
+  color: #e4edf9;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 800px) {
+  .cloud-providers {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: auto;
+  }
+
+  .provider-card {
+    padding: 23px;
+  }
+
+  .provider-desc {
+    min-height: auto;
+  }
+} 
 </style>
 </head>
 
@@ -1252,29 +1356,88 @@ button.cloud-node:hover {
 </section>
 
 <section id="comparison">
-  <div class="container">
-    <div class="section-heading">
-      <small>اختر منصتك</small>
-      <h2>مقارنة أشهر مزودي الخدمات السحابية</h2>
-      <p>نظرة تعريفية على ثلاثة من أكبر الأسماء في عالم السحابة.</p>
-    </div>
-    <div class="comparison-wrap">
-      <table>
-        <thead>
-          <tr><th>المعيار</th><th>Amazon AWS</th><th>Microsoft Azure</th><th>Google Cloud</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>الخدمات</td><td>واسعة ومتنوعة</td><td>سحابية ومؤسسية</td><td>بيانات وذكاء اصطناعي</td></tr>
-          <tr><td>الذكاء الاصطناعي</td><td>خدمات AI</td><td>Azure AI</td><td>Vertex AI</td></tr>
-          <tr><td>التخزين</td><td>Amazon S3</td><td>Blob Storage</td><td>Cloud Storage</td></tr>
-          <tr><td>قواعد البيانات</td><td>Amazon RDS</td><td>Azure SQL</td><td>Cloud SQL</td></tr>
-          <tr><td>الاستخدام</td><td>شركات ومطورون</td><td>مؤسسات وأعمال</td><td>تطبيقات وبيانات</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
+ <div class="cloud-providers">
 
+  <article class="provider-card aws">
+    <div class="provider-icon">☁️</div>
+    <h3>Amazon AWS</h3>
+    <p class="provider-desc">منصة سحابية شاملة ومتنوعة</p>
+
+    <div class="provider-feature">
+      <b>الذكاء الاصطناعي</b>
+      <span>AWS AI Services</span>
+    </div>
+
+    <div class="provider-feature">
+      <b>التخزين</b>
+      <span>Amazon S3</span>
+    </div>
+
+    <div class="provider-feature">
+      <b>قواعد البيانات</b>
+      <span>Amazon RDS</span>
+    </div>
+
+    <div class="provider-feature">
+      <b>الاستخدام</b>
+      <span>الشركات والمطورون</span>
+    </div>
+  </article>
+
+  <article class="provider-card azure">
+    <div class="provider-icon">🖥️</div>
+    <h3>Microsoft Azure</h3>
+    <p class="provider-desc">حلول سحابية للمؤسسات والأعمال</p>
+
+    <div class="provider-feature">
+      <b>الذكاء الاصطناعي</b>
+      <span>Azure AI</span>
+    </div>
+
+    <div class="provider-feature">
+      <b>التخزين</b>
+      <span>Azure Blob Storage</span>
+    </div>
+
+    <div class="provider-feature">
+      <b>قواعد البيانات</b>
+      <span>Azure SQL</span>
+    </div>
+
+    <div class="provider-feature">
+      <b>الاستخدام</b>
+      <span>المؤسسات والأعمال</span>
+    </div>
+  </article>
+
+  <article class="provider-card google">
+    <div class="provider-icon">🌐</div>
+    <h3>Google Cloud</h3>
+    <p class="provider-desc">منصة قوية للبيانات والتقنيات الذكية</p>
+
+    <div class="provider-feature">
+      <b>الذكاء الاصطناعي</b>
+      <span>Vertex AI</span>
+    </div>
+
+    <div class="provider-feature">
+      <b>التخزين</b>
+      <span>Cloud Storage</span>
+    </div>
+
+    <div class="provider-feature">
+      <b>قواعد البيانات</b>
+      <span>Cloud SQL</span>
+    </div>
+
+    <div class="provider-feature">
+      <b>الاستخدام</b>
+      <span>التطبيقات وتحليل البيانات</span>
+    </div>
+  </article>
+
+</div>
+</section>
 
 <section id="architecture">
   <div class="container">
